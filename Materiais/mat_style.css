@@ -261,3 +261,108 @@ p {
 .dark-mode {
     background-color: #001834;
     color: #ffffff;}
+
+
+
+
+
+
+
+/* Estilos para a aba de Matérias */
+.materiais-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.materiais-container h2 {
+    font-size: 28px;
+    color: #396877;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.materiais-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.materia {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.materia:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.materia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #396877;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.materia-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.materia-conteudo {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.materia-conteudo ul {
+    list-style-type: none;
+    padding: 0 20px 20px 20px;
+    margin: 0;
+}
+
+.materia-conteudo ul li {
+    margin: 10px 0;
+}
+
+.materia-conteudo ul li a {
+    text-decoration: none;
+    color: #173256;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.materia-conteudo ul li a:hover {
+    color: #4083DC;
+}
+
+/* Estilo para o modo escuro */
+.dark-mode .materia {
+    background-color: #173256;
+}
+.dark-mode h2 {
+    color: #ffffff;
+}
+
+.dark-mode .materia-header {
+    background-color: #2e4e58;
+}
+
+.dark-mode .materia-conteudo ul li a {
+    color: #ffffff;
+}
+
+.dark-mode .materia-conteudo ul li a:hover {
+    color: #4083DC;
+}

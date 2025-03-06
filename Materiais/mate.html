@@ -71,137 +71,101 @@
                 <p>Usuário</p>
             </div> 
     </header>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Seleciona a imagem do perfil
-            const perfilImg = document.querySelector('.perfil img');
-            const perfilLink = document.querySelector('.perfil a'); // Link do perfil no menu principal
-            const perfilSideLink = document.querySelector('.side-menu a[href="../Perfil/perfil_index.html"]'); // Link do perfil no side-menu
-        
-            // Seleciona todos os ícones do menu principal
-            const menuIcons = document.querySelectorAll('.menu div a');
-        
-            // Seleciona todos os ícones do menu lateral
-            const sideMenuIcons = document.querySelectorAll('.side-menu a');
-        
-            // Função para marcar o ícone ativo
-            function setActiveIcon(clickedIcon) {
-                // Remove a classe "active" de todos os ícones do menu principal, lateral e do perfil
-                menuIcons.forEach(icon => icon.classList.remove('active'));
-                sideMenuIcons.forEach(icon => icon.classList.remove('active'));
-                perfilLink.classList.remove('active'); // Desmarca o perfil no menu principal
-                perfilSideLink.classList.remove('active'); // Desmarca o perfil no side-menu
-        
-                // Adiciona a classe "active" ao ícone clicado
-                clickedIcon.classList.add('active');
-        
-                // Encontra o ícone correspondente no outro menu e marca como ativo
-                const href = clickedIcon.getAttribute('href');
-                const correspondingIcon = document.querySelector(`.menu div a[href="${href}"], .side-menu a[href="${href}"]`);
-                if (correspondingIcon) {
-                    correspondingIcon.classList.add('active');
-                }
-        
-                // Armazena o ícone ativo no localStorage
-                localStorage.setItem('activeIcon', href);
-        
-                // Se o ícone clicado estiver no side-menu, marca o correspondente no menu principal
-                if (clickedIcon.closest('.side-menu')) {
-                    const menuPrincipalIcon = document.querySelector(`.menu div a[href="${href}"]`);
-                    if (menuPrincipalIcon) {
-                        menuPrincipalIcon.classList.add('active');
-                    }
-                }
-            }
-        
-            // Função para marcar o perfil como ativo
-            function setPerfilActive() {
-                // Remove a classe "active" de todos os ícones do menu principal e lateral
-                menuIcons.forEach(icon => icon.classList.remove('active'));
-                sideMenuIcons.forEach(icon => icon.classList.remove('active'));
-        
-                // Adiciona a classe "active" ao perfil no menu principal e no side-menu
-                perfilLink.classList.add('active'); // Marca o perfil no menu principal
-                perfilSideLink.classList.add('active'); // Marca o perfil no side-menu
-        
-                // Armazena o estado do perfil no localStorage
-                localStorage.setItem('activeIcon', 'perfil_index.html');
-            }
-        
-            // Função para carregar o ícone ativo ao iniciar a página
-            function loadActiveIcon() {
-                const activeIconHref = localStorage.getItem('activeIcon');
-                if (activeIconHref) {
-                    if (activeIconHref === 'perfil_index.html') {
-                        // Marca o perfil como ativo no menu principal e no side-menu
-                        perfilLink.classList.add('active');
-                        perfilSideLink.classList.add('active');
-                    } else {
-                        // Encontra o ícone correspondente no menu principal e lateral
-                        const activeMenuIcon = document.querySelector(`.menu div a[href="${activeIconHref}"]`);
-                        const activeSideMenuIcon = document.querySelector(`.side-menu a[href="${activeIconHref}"]`);
-        
-                        // Marca o ícone ativo
-                        if (activeMenuIcon) activeMenuIcon.classList.add('active');
-                        if (activeSideMenuIcon) activeSideMenuIcon.classList.add('active');
-                    }
-                }
-            }
-        
-            // Adiciona um evento de clique à imagem do perfil no menu principal
-            perfilImg.addEventListener('click', () => {
-                setPerfilActive(); // Marca o perfil como ativo
-                perfilImg.classList.toggle('perfil-active'); // Adiciona ou remove a classe "perfil-active"
-            });
-        
-            // Adiciona um evento de clique ao link do perfil no side-menu
-            perfilSideLink.addEventListener('click', () => {
-                setPerfilActive(); // Marca o perfil como ativo
-                perfilImg.classList.toggle('perfil-active'); // Adiciona ou remove a classe "perfil-active"
-            });
-        
-            // Adiciona um evento de clique a cada ícone do menu principal
-            menuIcons.forEach(icon => {
-                icon.addEventListener('click', () => {
-                    setActiveIcon(icon); // Marca o ícone clicado
-                    perfilImg.classList.remove('perfil-active'); // Desmarca o ícone de perfil
-                });
-            });
-        
-            // Adiciona um evento de clique a cada ícone do menu lateral
-            sideMenuIcons.forEach(icon => {
-                icon.addEventListener('click', () => {
-                    setActiveIcon(icon); // Marca o ícone clicado
-                    perfilImg.classList.remove('perfil-active'); // Desmarca o ícone de perfil
-                });
-            });
-        
-            // Carrega o ícone ativo ao iniciar a página
-            loadActiveIcon();
-        
-            // Lógica para o menu hambúrguer
-            const hamburger = document.getElementById('hamburger');
-            const sideMenu = document.getElementById('side-menu');
-        
-            hamburger.addEventListener('click', () => {
-                sideMenu.classList.add('active'); // Exibe o menu lateral
-                hamburger.style.visibility = 'hidden';
-            });
-        
-            document.addEventListener('click', (event) => {
-                if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                    sideMenu.classList.remove('active'); // Fecha o menu lateral
-                    hamburger.style.visibility = 'visible';
-                }
-            });
-        
-            sideMenu.addEventListener('click', (event) => {
-                event.stopPropagation(); // Impede que o clique no menu feche ele
-            });
-        });
-    </script>
     <button class="toggle-mode" onclick="toggleDarkMode()">Modo Escuro</button>
+
+
+    <main class="materiais-container">
+        <h2>Matérias</h2>
+        <div class="materiais-lista">
+            <div class="materia">
+                <div class="materia-header" onclick="toggleMateria('matematica')">
+                    <h3>Matemática Básica</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="materia-conteudo" id="matematica">
+                    <ul>
+                        <li><a href="#">Soma</a></li>
+                        <li><a href="#">Subtração</a></li>
+                        <li><a href="#">Multiplicação</a></li>
+                        <li><a href="#">Divisão</a></li>
+                        <li><a href="#">Exercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="materia">
+                <div class="materia-header" onclick="toggleMateria('frações')">
+                    <h3>Frações</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="materia-conteudo" id="frações">
+                    <ul>
+                        <li><a href="#">Soma de Frações</a></li>
+                        <li><a href="#">Subtração de Frações</a></li>
+                        <li><a href="#">Multplicação de Frações</a></li>
+                        <li><a href="#">Divisão de Multiplicação</a></li>
+                        <li><a href="#">Exercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="materia">
+                <div class="materia-header" onclick="toggleMateria('equação1')">
+                    <h3>Equação do 1°Grau</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="materia-conteudo" id="equação1">
+                    <ul>
+                        <li><a href="#">Introdução a Equação do 1°Grau</a></li>
+                        <li><a href="#">Conceitos Fundamentais</a></li>
+                        <li><a href="#">Exercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="materia">
+                <div class="materia-header" onclick="toggleMateria('equação2')">
+                    <h3>Equação do 2°Grau</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="materia-conteudo" id="equação2">
+                    <ul>
+                        <li><a href="#">Introdução a Equação do 2°Grau</a></li>
+                        <li><a href="#">Conceitos Fundamentais</a></li>
+                        <li><a href="#">Exercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="materia">
+                <div class="materia-header" onclick="toggleMateria('funçoes')">
+                    <h3>Funções</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="materia-conteudo" id="funçoes">
+                    <ul>
+                        <li><a href="#">Introdução a Funções</a></li>
+                        <li><a href="#">Conceitos Fundamentais</a></li>
+                        <li><a href="#">Exercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="materia">
+                <div class="materia-header" onclick="toggleMateria('geometria')">
+                    <h3>Geometria Plana</h3>
+                    <span class="toggle-icon">&#9660;</span>
+                </div>
+                <div class="materia-conteudo" id="geometria">
+                    <ul>
+                        <li><a href="#">Introdução a Geometria</a></li>
+                        <li><a href="#">Conceitos Fundamentais</a></li>
+                        <li><a href="#">Exercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 
 </body>
 <script src="../script.js"></script>
