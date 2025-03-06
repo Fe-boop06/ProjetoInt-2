@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; 
+    line-height: 1.6;
+    min-width: 450px;
+}
+
+h1 {
+    display: flex; 
+    align-items: center; 
+    background: #396877;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 15px 20px;
+    margin: 25px auto; 
+    max-width: 99%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background 0.3s ease, transform 0.3s ease;
+    gap: 15px;
+    padding-left: 60px;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex; 
+    align-items: center; 
+    gap: 50px; 
+    margin-left: auto;
+}
+
+.menu div img {
+    width: 35px; 
+    height: 35px;
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+
+.menu div img:hover {
+    transform: scale(1.4); 
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    width: 80px; 
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 15px; 
+    position: absolute;
+    z-index: 1;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%); 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu div a.active img {
+    border-bottom: 3px solid #ffffff; /* Ou qualquer estilo que você desejar */
+}
+
+.perfil {
+    position: relative;
+    border-radius: 9px;
+    padding-right: 20px;
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-left: auto;  
+}
+
+.perfil img {
+    width: 50px;
+    height: auto; 
+    transition: transform 0.3s ease;
+    border-radius: 50%; /* Torna a imagem redonda */
+    cursor: pointer; /* Mostra o cursor de clique */
+}
+
+
+.perfil img:hover {
+    transform: scale(1.3); 
+}
+
+.n {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;  
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+@media (min-width: 880px) {
+    .mobile-menu {
+        display: none; 
+    }
+
+    .menu {
+        display: flex; 
+    }
+}
+
+@media (max-width: 880px) {
+    .mobile-menu {
+        display: block;
+        position: relative;
+        left: -100px;
+    }
+
+    h1 {
+        margin-bottom: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centraliza o conteúdo principal */
+        text-align: center; /* Centraliza o texto */
+        position: relative; /* Permite posicionar o botão de forma absoluta */
+        padding-left: 60px; /* Ajuste para o espaço do botão */
+    }
+
+    .menu {
+        display: none; 
+    }
+
+    .perfil {
+        display: none; 
+    }
+
+    .hamburger {
+        margin-right: auto; /* Empurra o ícone para a esquerda */
+        margin-left: 10px;  /* Ajusta a distância da borda */
+        font-size: 30px;
+        cursor: pointer;
+        color: #ffffff;
+        padding: 15px 20px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease; /* Adiciona animação ao ícone */
+    }
+
+    .hamburger:hover {
+        transform: scale(1.2); /* Aumenta o ícone em 20% ao passar o mouse */
+    }
+
+    .r1 {
+        display: none;
+    }
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 110px;
+    height: 100%;
+    background: #396877;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;  
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000; 
+}
+
+.side-menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a img {
+    width: 40px; 
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.side-menu a img:hover {
+    transform: scale(1.2);  
+}
+
+.tooltip .tooltiptext {
+    width: 100px;
+    background-color: #173256;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;  
+    position: absolute;
+    z-index: 1;
+    bottom: -30px; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;  
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.side-menu a {
+    margin-bottom: 20px;  
+}
+
+.side-menu.active {
+    left: 0;  
+}
+
+.side-menu a.active {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #2e4e58;
+}
+
+.toggle-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0004ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dark-mode {
+    background-color: #001834;
+    color: #ffffff;}

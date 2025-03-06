@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="mat_style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>
+            <div class="mobile-menu">
+                <div class="hamburger" id="hamburger">
+                    &#9776;
+                </div>
+                <div class="side-menu" id="side-menu">
+                    <a href="../Perfil/perfil_index.html" class="tooltip" id="user-link">
+                        <img src="../Imagens/account_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Usuário">
+                        <span class="tooltiptext">Usuário</span>
+                    </a>
+                    <a href="../Inicio/index-1.html" class="tooltip" id="home-link">
+                        <img src="../Imagens/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Home">
+                        <span class="tooltiptext">Home</span>
+                    </a>
+                    <a href="../Materiais/mate.html" class="tooltip" id="materials-link">
+                        <img src="../Imagens/menu_book_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Materiais">
+                        <span class="tooltiptext">Materiais</span>
+                    </a>
+                    <a href="../Ensino_1/ensin_1.html" class="tooltip" id="ensino1-link">
+                        <img src="../Imagens/calculate_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Ensino 1">
+                        <span class="tooltiptext">Ensino 1</span>
+                    </a>
+                    <a href="../Ensino2/ensino2.html" class="tooltip" id="ensino2-link">
+                        <img src="../Imagens/function_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Ensino 2">
+                        <span class="tooltiptext">Ensino 2</span>
+                    </a>
+                </div>
+
+            </div>            
+            Matemática Para Todos
+            <nav class="menu">
+                <div class="tooltip">
+                    <a href="../Inicio/index-1.html" class="menu-item">
+                        <img src="../Imagens/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                        <span class="tooltiptext">Inicio</span>
+                    </a>
+                </div>
+                <div class="tooltip">
+                    <a href="../Materiais/mate.html" class="menu-item">
+                    <img src="../Imagens/menu_book_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                    <span class="tooltiptext">Materiais</span>
+                </a>
+                </div>
+                <div class="tooltip">
+                    <a href="../Ensino_1/ensin_1.html" class="menu-item">
+                    <img src="../Imagens/calculate_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                    <span class="tooltiptext">Ensino 1</span>
+                </a>
+                </div>
+                <div class="tooltip">
+                    <a href="../Ensino2/ensino2.html" class="menu-item">
+                    <img src="../Imagens/function_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                    <span class="tooltiptext">Ensino 2</span>
+                </a>
+                </div>
+            </nav>
+            <div class="perfil">
+                <a href="../Perfil/perfil_index.html" >
+                <img src="../Imagens/account_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+            </a>
+                <p>Usuário</p>
+            </div> 
+    </header>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Seleciona a imagem do perfil
+            const perfilImg = document.querySelector('.perfil img');
+            const perfilLink = document.querySelector('.perfil a'); // Link do perfil no menu principal
+            const perfilSideLink = document.querySelector('.side-menu a[href="../Perfil/perfil_index.html"]'); // Link do perfil no side-menu
+        
+            // Seleciona todos os ícones do menu principal
+            const menuIcons = document.querySelectorAll('.menu div a');
+        
+            // Seleciona todos os ícones do menu lateral
+            const sideMenuIcons = document.querySelectorAll('.side-menu a');
+        
+            // Função para marcar o ícone ativo
+            function setActiveIcon(clickedIcon) {
+                // Remove a classe "active" de todos os ícones do menu principal, lateral e do perfil
+                menuIcons.forEach(icon => icon.classList.remove('active'));
+                sideMenuIcons.forEach(icon => icon.classList.remove('active'));
+                perfilLink.classList.remove('active'); // Desmarca o perfil no menu principal
+                perfilSideLink.classList.remove('active'); // Desmarca o perfil no side-menu
+        
+                // Adiciona a classe "active" ao ícone clicado
+                clickedIcon.classList.add('active');
+        
+                // Encontra o ícone correspondente no outro menu e marca como ativo
+                const href = clickedIcon.getAttribute('href');
+                const correspondingIcon = document.querySelector(`.menu div a[href="${href}"], .side-menu a[href="${href}"]`);
+                if (correspondingIcon) {
+                    correspondingIcon.classList.add('active');
+                }
+        
+                // Armazena o ícone ativo no localStorage
+                localStorage.setItem('activeIcon', href);
+        
+                // Se o ícone clicado estiver no side-menu, marca o correspondente no menu principal
+                if (clickedIcon.closest('.side-menu')) {
+                    const menuPrincipalIcon = document.querySelector(`.menu div a[href="${href}"]`);
+                    if (menuPrincipalIcon) {
+                        menuPrincipalIcon.classList.add('active');
+                    }
+                }
+            }
+        
+            // Função para marcar o perfil como ativo
+            function setPerfilActive() {
+                // Remove a classe "active" de todos os ícones do menu principal e lateral
+                menuIcons.forEach(icon => icon.classList.remove('active'));
+                sideMenuIcons.forEach(icon => icon.classList.remove('active'));
+        
+                // Adiciona a classe "active" ao perfil no menu principal e no side-menu
+                perfilLink.classList.add('active'); // Marca o perfil no menu principal
+                perfilSideLink.classList.add('active'); // Marca o perfil no side-menu
+        
+                // Armazena o estado do perfil no localStorage
+                localStorage.setItem('activeIcon', 'perfil_index.html');
+            }
+        
+            // Função para carregar o ícone ativo ao iniciar a página
+            function loadActiveIcon() {
+                const activeIconHref = localStorage.getItem('activeIcon');
+                if (activeIconHref) {
+                    if (activeIconHref === 'perfil_index.html') {
+                        // Marca o perfil como ativo no menu principal e no side-menu
+                        perfilLink.classList.add('active');
+                        perfilSideLink.classList.add('active');
+                    } else {
+                        // Encontra o ícone correspondente no menu principal e lateral
+                        const activeMenuIcon = document.querySelector(`.menu div a[href="${activeIconHref}"]`);
+                        const activeSideMenuIcon = document.querySelector(`.side-menu a[href="${activeIconHref}"]`);
+        
+                        // Marca o ícone ativo
+                        if (activeMenuIcon) activeMenuIcon.classList.add('active');
+                        if (activeSideMenuIcon) activeSideMenuIcon.classList.add('active');
+                    }
+                }
+            }
+        
+            // Adiciona um evento de clique à imagem do perfil no menu principal
+            perfilImg.addEventListener('click', () => {
+                setPerfilActive(); // Marca o perfil como ativo
+                perfilImg.classList.toggle('perfil-active'); // Adiciona ou remove a classe "perfil-active"
+            });
+        
+            // Adiciona um evento de clique ao link do perfil no side-menu
+            perfilSideLink.addEventListener('click', () => {
+                setPerfilActive(); // Marca o perfil como ativo
+                perfilImg.classList.toggle('perfil-active'); // Adiciona ou remove a classe "perfil-active"
+            });
+        
+            // Adiciona um evento de clique a cada ícone do menu principal
+            menuIcons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    setActiveIcon(icon); // Marca o ícone clicado
+                    perfilImg.classList.remove('perfil-active'); // Desmarca o ícone de perfil
+                });
+            });
+        
+            // Adiciona um evento de clique a cada ícone do menu lateral
+            sideMenuIcons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    setActiveIcon(icon); // Marca o ícone clicado
+                    perfilImg.classList.remove('perfil-active'); // Desmarca o ícone de perfil
+                });
+            });
+        
+            // Carrega o ícone ativo ao iniciar a página
+            loadActiveIcon();
+        
+            // Lógica para o menu hambúrguer
+            const hamburger = document.getElementById('hamburger');
+            const sideMenu = document.getElementById('side-menu');
+        
+            hamburger.addEventListener('click', () => {
+                sideMenu.classList.add('active'); // Exibe o menu lateral
+                hamburger.style.visibility = 'hidden';
+            });
+        
+            document.addEventListener('click', (event) => {
+                if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                    sideMenu.classList.remove('active'); // Fecha o menu lateral
+                    hamburger.style.visibility = 'visible';
+                }
+            });
+        
+            sideMenu.addEventListener('click', (event) => {
+                event.stopPropagation(); // Impede que o clique no menu feche ele
+            });
+        });
+    </script>
+    <button class="toggle-mode" onclick="toggleDarkMode()">Modo Escuro</button>
+
+</body>
+<script src="../script.js"></script>
+</html>

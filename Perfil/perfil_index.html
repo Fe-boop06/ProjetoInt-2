@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="perfil_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <h1>
+            <div class="mobile-menu">
+                <div class="hamburger" id="hamburger">
+                    &#9776;
+                </div>
+                <div class="side-menu" id="side-menu">
+                    <a href="../Perfil/perfil_index.html" class="tooltip" id="user-link">
+                        <img src="../Imagens/account_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Usuário">
+                        <span class="tooltiptext">Usuário</span>
+                    </a>
+                    <a href="../Inicio/index-1.html" class="tooltip" id="home-link">
+                        <img src="../Imagens/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Home">
+                        <span class="tooltiptext">Home</span>
+                    </a>
+                    <a href="../Materiais/mate.html" class="tooltip" id="materials-link">
+                        <img src="../Imagens/menu_book_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Materiais">
+                        <span class="tooltiptext">Materiais</span>
+                    </a>
+                    <a href="../Ensino_1/ensin_1.html" class="tooltip" id="ensino1-link">
+                        <img src="../Imagens/calculate_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Ensino 1">
+                        <span class="tooltiptext">Ensino 1</span>
+                    </a>
+                    <a href="../Ensino2/ensino2.html" class="tooltip" id="ensino2-link">
+                        <img src="../Imagens/function_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Ensino 2">
+                        <span class="tooltiptext">Ensino 2</span>
+                    </a>
+                </div>
+
+            </div>            
+            Matemática Para Todos
+            <nav class="menu">
+                <div class="tooltip">
+                    <a href="../Inicio/index-1.html" class="menu-item">
+                        <img src="../Imagens/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                        <span class="tooltiptext">Inicio</span>
+                    </a>
+                </div>
+                <div class="tooltip">
+                    <a href="../Materiais/mate.html" class="menu-item">
+                    <img src="../Imagens/menu_book_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                    <span class="tooltiptext">Materiais</span>
+                </a>
+                </div>
+                <div class="tooltip">
+                    <a href="../Ensino_1/ensin_1.html" class="menu-item">
+                    <img src="../Imagens/calculate_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                    <span class="tooltiptext">Ensino 1</span>
+                </a>
+                </div>
+                <div class="tooltip">
+                    <a href="../Ensino2/ensino2.html" class="menu-item">
+                    <img src="../Imagens/function_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png">
+                    <span class="tooltiptext">Ensino 2</span>
+                </a>
+                </div>
+            </nav>
+            <div class="perfil">
+                <a href="../Perfil/perfil_index.html" >
+                <img src="../Imagens/account_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="">
+            </a>
+                <p>Usuário</p>
+            </div> 
+    </header>
+    <div class="container">
+        <!-- Seção Editar Perfil -->
+        <div class="main-content">
+            <div class="Per">
+                <img class="imgP" src="../Imagens/account_circle_50dp_000000_FILL0_wght400_GRAD0_opsz48.png" alt="Usuário">
+            </div>
+            <div class="EditPerfil">
+                <h2>
+                    <a href="#edit">Editar Perfil</a>
+                </h2>   
+            </div>
+            <div class="info">
+                Usuário: <br>
+                Data de Nascimento: <br>
+                Email: <br>
+                Qualificação:
+            </div>
+            <div class="Destaque">
+                Comentáriozinho:
+            </div>
+        </div>
+    
+        <!-- Seção Desempenho -->
+        <div class="performance-sidebar" id="performance-metrics">
+            <h2>Desempenho</h2>
+            <div class="performance-metrics" id="lista-metricas">
+            </div>
+        </div>
+<button class="toggle-mode" onclick="toggleDarkMode()">Modo Escuro</button>
+</body>
+</html>
+<script src="../script.js"></script>
