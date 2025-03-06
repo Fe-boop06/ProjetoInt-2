@@ -420,3 +420,189 @@ p {
 .dark-mode {
     background-color: #001834;
     color: #ffffff;}
+
+    @media (max-width: 880px) {
+        /* Ajustes para o container principal */
+        .container {
+            flex-direction: column; /* Altera o layout para coluna */
+            gap: 20px; /* Reduz o espaçamento entre os elementos */
+            padding: 10px; /* Reduz o padding */
+        }
+    
+        /* Ajustes para a seção de perfil */
+        .Per {
+            width: 100%; /* Ocupa toda a largura */
+            left: 0; /* Remove o posicionamento relativo */
+            text-align: center; /* Centraliza o conteúdo */
+            margin-top: 20px; /* Adiciona margem no topo */
+        }
+    
+        .imgP {
+            width: 300px; /* Reduz o tamanho da imagem */
+            height: auto; /* Mantém a proporção */
+        }
+    
+        /* Ajustes para o botão de editar perfil */
+        .EditPerfil {
+            width: 60%; /* Reduz a largura */
+            left: 0; /* Remove o posicionamento relativo */
+            margin: 10px auto; /* Centraliza o botão */
+            text-align: center; /* Centraliza o texto */
+        }
+    
+        /* Ajustes para as informações do perfil */
+        .info {
+            width: 90%; /* Ocupa 90% da largura */
+            left: 0; /* Remove o posicionamento relativo */
+            margin: 10px auto; /* Centraliza o bloco */
+            font-size: 16px; /* Reduz o tamanho da fonte */
+            padding: 15px; /* Ajusta o padding */
+        }
+    
+        /* Ajustes para a seção de destaque */
+        .Destaque {
+            width: 90%; /* Ocupa 90% da largura */
+            left: 0; /* Remove o posicionamento relativo */
+            margin: 10px auto; /* Centraliza o bloco */
+            font-size: 18px; /* Reduz o tamanho da fonte */
+            padding: 15px; /* Ajusta o padding */
+            height: 150px; /* Altura automática */
+        }
+    
+        /* Ajustes para a barra lateral de desempenho */
+        .performance-sidebar {
+            width: 90%; /* Ocupa 90% da largura */
+            margin: 10px auto; /* Centraliza o bloco */
+            padding: 15px; /* Ajusta o padding */
+        }
+    
+        /* Ajustes para a tabela de desempenho */
+        .performance-table th,
+        .performance-table td {
+            font-size: 14px; /* Reduz o tamanho da fonte */
+            padding: 8px; /* Reduz o padding */
+        }
+    
+        /* Ajustes para as métricas de desempenho */
+        .performance-metrics {
+            gap: 20px; /* Reduz o espaçamento entre as métricas */
+        }
+    
+        .label {
+            font-size: 18px; /* Reduz o tamanho da fonte */
+            width: 60%; /* Ajusta a largura */
+        }
+    
+        .percentage {
+            font-size: 16px; /* Reduz o tamanho da fonte */
+            width: 40%; /* Ajusta a largura */
+        }
+    
+        /* Ajustes para a barra de progresso */
+        .progress-bar {
+            height: 28px; /* Reduz a altura */
+        }
+        .progress{
+            line-height: 28px;
+        }
+    
+        /* Ajustes para o botão de alternar modo */
+        .toggle-mode {
+            bottom: 10px; /* Ajusta a posição */
+            right: 10px; /* Ajusta a posição */
+            padding: 8px 16px; /* Reduz o padding */
+            font-size: 14px; /* Reduz o tamanho da fonte */
+        }
+    }
+
+
+    .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed; /* Fixo na tela */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Garante que fique acima de tudo */
+    }
+    
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px; /* Largura máxima */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+    
+    .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+    
+    .close-modal:hover {
+        color: #000;
+    }
+    
+    /* Ajustes para o modo escuro */
+    .dark-mode .modal-content {
+        background-color: #173256;
+        color: #fff;
+    }
+    
+    .dark-mode .close-modal {
+        color: #fff;
+    }
+    
+    .dark-mode .close-modal:hover {
+        color: #ccc;
+    }
+
+/* Estilos específicos para o modal de comentário */
+#commentInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+#saveComment {
+    background-color: #4083DC;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#saveComment:hover {
+    background-color: #396877;
+}
+
+/* Ajustes para o modo escuro */
+.dark-mode #commentInput {
+    background-color: #173256;
+    color: #fff;
+    border-color: #2e4e58;
+}
+
+.dark-mode #saveComment {
+    background-color: #2e4e58;
+}
+
+.dark-mode #saveComment:hover {
+    background-color: #396877;
+}

@@ -294,3 +294,70 @@ window.onload = function () {
         document.querySelector(".toggle-mode").textContent = "Modo Claro";
     }
 };
+
+/*--------------------------------------------------------------------------*/
+function openEditProfileModal() {
+    const modal = document.getElementById("editProfileModal");
+    modal.style.display = "flex"; // Exibe o modal
+}
+
+// Função para fechar o modal
+function closeEditProfileModal() {
+    const modal = document.getElementById("editProfileModal");
+    modal.style.display = "none"; // Esconde o modal
+}
+
+// Adiciona o evento de clique ao botão "Editar Perfil"
+document.querySelector(".EditPerfil").addEventListener("click", openEditProfileModal);
+
+// Adiciona o evento de clique ao botão de fechar (×)
+document.querySelector(".close-modal").addEventListener("click", closeEditProfileModal);
+
+// Fecha o modal se clicar fora dele
+window.addEventListener("click", (event) => {
+    const modal = document.getElementById("editProfileModal");
+    if (event.target === modal) {
+        closeEditProfileModal();
+    }
+});
+
+/*---------------------------------------------------------------------------------*/
+
+// Função para abrir o modal de comentário
+function openCommentModal() {
+    const modal = document.getElementById("commentModal");
+    document.getElementById("commentInput").value = ""; // Sempre começa vazio
+    modal.style.display = "flex"; // Exibe o modal
+}
+
+// Função para salvar o comentário
+function saveComment() {
+    const commentText = document.getElementById("commentInput").value; // Pega o texto do textarea
+    document.querySelector(".Destaque").innerText = commentText; // Atualiza o texto no "Comentáriozinho"
+    closeCommentModal(); // Fecha o modal
+}
+
+// Função para fechar o modal de comentário
+function closeCommentModal() {
+    const modal = document.getElementById("commentModal");
+    modal.style.display = "none"; // Esconde o modal
+}
+
+// Adiciona o evento de clique ao "Comentáriozinho"
+document.querySelector(".Destaque").addEventListener("click", openCommentModal);
+
+// Adiciona o evento de clique ao botão "Salvar"
+document.getElementById("saveComment").addEventListener("click", saveComment);
+
+// Adiciona o evento de clique ao botão de fechar (×)
+document.querySelectorAll(".close-modal").forEach(button => {
+    button.addEventListener("click", closeCommentModal);
+});
+
+// Fecha o modal se clicar fora dele
+window.addEventListener("click", (event) => {
+    const modal = document.getElementById("commentModal");
+    if (event.target === modal) {
+        closeCommentModal();
+    }
+});
