@@ -73,9 +73,8 @@ h1 {
     opacity: 1;
 }
 
-.menu div a.active img {
-    border-bottom: 3px solid #ffffff; /* Ou qualquer estilo que você desejar */
-}
+.menu-item.active {
+    border-bottom: 3px solid #ffffff; }
 
 .perfil {
     position: relative;
@@ -258,6 +257,133 @@ p {
     font-size: 16px;
 }
 
-.dark-mode {
+.dark-mode{
     background-color: #001834;
     color: #ffffff;}
+    
+
+/*-------------------------------------------------------*/
+.video-box, .access-btn, .module-btn, .sub-title, .lessons button, .toggle-mode {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.video-box:hover, .access-btn:hover, .module-btn:hover, .sub-title:hover, .lessons button:hover, .toggle-mode:hover {
+    transform: scale(1.05);
+    background-color: #153e4b;
+}
+.level-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a90e2;
+    color: white;
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, );
+}
+.content {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+.video-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    border-radius: 10px;
+
+}
+.video-box {
+    border-radius: 8px;
+    background: black;
+    width: 90%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+.details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 39px;
+}
+.details label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.details .inline {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 9px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+.details input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+}
+.access-btn {
+    background-color: #2f5d66;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.modules {
+    width: 50%;
+    padding: 15px;
+    border-radius: 10px;
+
+
+}
+.module-title {
+    background-color: #4a90e2;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+}
+.module-btn, .sub-title, .lessons button {
+    background: #2f5d66;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    margin-top: 5px;
+    height: 50px;
+    border-radius: 5px;
+}
+.lessons {
+    display: none;
+    padding-left: 10px;
+}
+
+.sub-title::after {
+    content: " ▾";
+    transition: transform 0.3s ease;
+}
+
+.sub-title.open::after {
+    content: " ▴";
+}

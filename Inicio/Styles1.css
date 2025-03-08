@@ -10,7 +10,6 @@ body {
     font-family: Arial, sans-serif; 
     line-height: 1.6;
     min-width: 450px;
-
 }
 
 h1 {
@@ -28,11 +27,7 @@ h1 {
     gap: 15px;
     padding-left: 60px;
     justify-content: space-between;
-   
-    
 }
-
-
 
 .menu {
     display: flex; 

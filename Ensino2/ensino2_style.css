@@ -73,9 +73,8 @@ h1 {
     opacity: 1;
 }
 
-.menu div a.active img {
-    border-bottom: 3px solid #ffffff; /* Ou qualquer estilo que você desejar */
-}
+.menu-item.active {
+    border-bottom: 3px solid #ffffff; }
 
 .perfil {
     position: relative;
