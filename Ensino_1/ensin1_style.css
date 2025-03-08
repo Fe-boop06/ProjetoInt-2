@@ -123,6 +123,7 @@ p {
     .menu {
         display: flex; 
     }
+    
 }
 
 @media (max-width: 880px) {
@@ -289,7 +290,6 @@ p {
 .content {
     display: flex;
     padding: 20px;
-    gap: 10px;
 }
 .video-container {
     padding: 15px;
@@ -304,7 +304,7 @@ p {
     border-radius: 8px;
     background: black;
     width: 90%;
-    height: 350px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -312,6 +312,7 @@ p {
     font-size: 24px;
 }
 .details {
+    font-size: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -352,7 +353,6 @@ p {
     padding: 15px;
     border-radius: 10px;
 
-
 }
 .module-title {
     background-color: #4a90e2;
@@ -361,7 +361,7 @@ p {
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    height: 50px;
+    height: 70px;
 }
 .module-btn, .sub-title, .lessons button {
     background: #2f5d66;
@@ -370,20 +370,122 @@ p {
     width: 100%;
     padding: 10px;
     text-align: left;
-    margin-top: 5px;
-    height: 50px;
+    margin-top: 12px;
+    height: 70px;
     border-radius: 5px;
 }
 .lessons {
     display: none;
-    padding-left: 10px;
+    padding-left: 20px;
+    
 }
 
-.sub-title::after {
-    content: " ▾";
+.lessons {
+    display: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.lessons button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #1995b1;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.lessons button:hover {
+    background-color: #396877;
+    transform: translateX(10px);
+}
+
+.lessons button:active {
+    background-color: #1e3a40;
+    transform: translateX(0);
+}
+
+.sub-title {
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.sub-title .arrow-icon {
+    font-size: 18px;
     transition: transform 0.3s ease;
 }
 
-.sub-title.open::after {
-    content: " ▴";
+.sub-title.open .arrow-icon {
+    transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 880px) {
+    h1 {
+        font-size: 15px; /* Reduz o tamanho da fonte do título */
+    }
+
+    .content {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .video-container, .modules {
+        width: 100%; /* Ocupa toda a largura da tela */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .video-box {
+        height: 290px; /* Reduz a altura do vídeo */
+        font-size: 20px; /* Reduz o tamanho da fonte do ícone de vídeo */
+    }
+
+    .details {
+        font-size: 16px; /* Reduz o tamanho da fonte dos detalhes */
+    }
+
+    .details .inline {
+        margin-bottom: 5px; /* Reduz o espaçamento entre os inputs */
+    }
+
+    .details input {
+        font-size: 14px; /* Reduz o tamanho da fonte dos inputs */
+    }
+
+    .access-btn {
+        margin-top:10px;
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+
+    }
+
+    /* Ajustes para os módulos e aulas */
+    .module-title, .sub-title, .lessons button {
+        height: 50px;
+        font-size: 14px; /
+    }
+
+    .lessons button {
+        padding: 8px 12px; 
+        font-size: 12px; 
+    }
+
+
+
+    .toggle-mode {
+        font-size: 14px;
+        padding: 8px 16px; 
+    }
 }

@@ -400,11 +400,11 @@ p{
 }
 
 .ce1:hover{
-    transform: scale(1.08); 
+    transform: scale(1.03); 
 }
 
 .ce2:hover{
-    transform: scale(1.08); 
+    transform: scale(1.03); 
 }
 
 @media (max-width: 880px) {

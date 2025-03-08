@@ -260,3 +260,230 @@ p {
 .dark-mode {
     background-color: #001834;
     color: #ffffff;}
+/*-------------------------------------------------------------------------*/
+
+.video-box, .access-btn, .module-btn, .sub-title, .lessons button, .toggle-mode {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.video-box:hover, .access-btn:hover, .module-btn:hover, .sub-title:hover, .lessons button:hover, .toggle-mode:hover {
+    transform: scale(1.05);
+    background-color: #153e4b;
+}
+.level-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a90e2;
+    color: white;
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, );
+}
+.content {
+    display: flex;
+    padding: 20px;
+}
+.video-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    border-radius: 10px;
+
+}
+.video-box {
+    border-radius: 8px;
+    background: black;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+.details {
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 39px;
+}
+.details label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.details .inline {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 9px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+.details input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+}
+.access-btn {
+    background-color: #2f5d66;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.modules {
+    width: 50%;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+.module-title {
+    background-color: #4a90e2;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    height: 70px;
+}
+.module-btn, .sub-title, .lessons button {
+    background: #2f5d66;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    margin-top: 12px;
+    height: 70px;
+    border-radius: 5px;
+}
+.lessons {
+    display: none;
+    padding-left: 20px;
+    
+}
+
+.lessons {
+    display: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.lessons button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #1995b1;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.lessons button:hover {
+    background-color: #396877;
+    transform: translateX(10px);
+}
+
+.lessons button:active {
+    background-color: #1e3a40;
+    transform: translateX(0);
+}
+
+.sub-title {
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.sub-title .arrow-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.sub-title.open .arrow-icon {
+    transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 880px) {
+    h1 {
+        font-size: 15px; /* Reduz o tamanho da fonte do título */
+    }
+
+    .content {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .video-container, .modules {
+        width: 100%; /* Ocupa toda a largura da tela */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .video-box {
+        height: 290px; /* Reduz a altura do vídeo */
+        font-size: 20px; /* Reduz o tamanho da fonte do ícone de vídeo */
+    }
+
+    .details {
+        font-size: 16px; /* Reduz o tamanho da fonte dos detalhes */
+    }
+
+    .details .inline {
+        margin-bottom: 5px; /* Reduz o espaçamento entre os inputs */
+    }
+
+    .details input {
+        font-size: 14px; /* Reduz o tamanho da fonte dos inputs */
+    }
+
+    .access-btn {
+        margin-top:10px;
+        font-size: 14px; /* Reduz o tamanho da fonte do botão */
+
+    }
+
+    /* Ajustes para os módulos e aulas */
+    .module-title, .sub-title, .lessons button {
+        height: 50px;
+        font-size: 14px; /
+    }
+
+    .lessons button {
+        padding: 8px 12px; 
+        font-size: 12px; 
+    }
+
+
+
+    .toggle-mode {
+        font-size: 14px;
+        padding: 8px 16px; 
+    }
+}
