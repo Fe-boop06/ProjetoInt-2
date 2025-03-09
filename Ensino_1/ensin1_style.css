@@ -317,7 +317,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 39px;
+    margin-top: 30px;
 }
 .details label {
     font-weight: bold;
@@ -449,8 +449,8 @@ p {
     }
 
     .video-box {
-        height: 290px; /* Reduz a altura do vídeo */
-        font-size: 20px; /* Reduz o tamanho da fonte do ícone de vídeo */
+        height: 250px; /* Reduz a altura do vídeo */
+        font-size: 30px; /* Reduz o tamanho do ícone */
     }
 
     .details {
@@ -489,3 +489,168 @@ p {
         padding: 8px 16px; 
     }
 }
+/*--------------------------------------------*/
+
+
+.materials-btn {
+    background-color: #2f5d66;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 50%;
+    margin-top: 10px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.materials-btn:hover {
+    background-color: #1e4149;
+}
+
+.comments {
+    background-color: #2f5d66;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 15px;
+    border-radius: 5px;
+    height: 40px;
+    left: 20px;
+    width: 100%;
+}
+
+.comment-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.sidebar {
+    width: 48%;
+}
+
+.side-section {
+    background: white;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.side-title {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.links {
+    list-style: none;
+    padding: 10px;
+}
+
+.links li {
+    padding: 5px 0;
+    color: blue;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.links li:hover {
+    color: darkblue;
+}
+
+
+/* Estilo para o container do título e botão de voltar */
+.level-container {
+    position: relative; /* Permite posicionar o botão de voltar dentro do container */
+}
+
+.back-btn {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Adicione essas classes ao seu CSS */
+.pagina-principal {
+    display: block; /* Exibe a página principal */
+}
+
+.nova-pagina {
+    display: none; /* Oculta a nova página inicialmente */
+}
+
+.visible {
+    display: block; /* Exibe a página */
+}
+
+.hidden {
+    display: none; /* Oculta a página */
+}
+/* Media Query para telas menores (até 768px) */
+@media (max-width: 880px) {
+    #nova-pagina {
+        padding: 10px; /* Reduz o padding para telas menores */
+    }
+
+  
+
+    .video-container {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+    }
+
+    
+
+    .details {
+        width: 100%; /* Ocupa toda a largura */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .details p {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .materials-btn {
+        width: 100%; /* Botão ocupa toda a largura */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .comments {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .comment-box {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        gap: 5px; /* Espaçamento entre os elementos */
+    }
+
+    .side-section {
+        width: 210%;
+    }
+
+    .links li {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+}
+

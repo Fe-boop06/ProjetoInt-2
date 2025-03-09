@@ -73,6 +73,7 @@
             </div> 
     </header>
     <main>
+        <div id="pagina-principal" class="pagina-principal visible">
         <div class="level-container">
             ENSINO FUNDAMENTAL I
         </div>
@@ -136,8 +137,52 @@
                     </div>
                 </div>
             </div>
+        </div>
         </section>
+        <div id="nova-pagina" class="nova-pagina hidden">
+            <div class="level-container">
+                AULAS
+                <!-- Botão de voltar -->
+                <button class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+            <section class="content">
+                <div class="video-container">
+                    <div class="video-box">▶</div>
+                    <div class="details">
+                        <p><strong>TÍTULO:</strong></p>
+                        <p>Descrição:</p>
+                        <button class="materials-btn">📄 MATERIAIS DA AULA</button>
+                    </div>
+                    <div class="comments">COMENTÁRIOS</div>
+                    <textarea placeholder="COMENTE..." class="comment-box"></textarea>
+                </div>
+                <div class="sidebar">
+                    <div class="side-section">
+                        <div class="side-title">MAIS VÍDEOS</div>
+                        <ul class="links">
+                            <li>Vídeo 1</li>
+                            <li>Vídeo 2</li>
+                            <li>Vídeo 3</li>
+                            <li>Vídeo 4</li>
+                        </ul>
+                    </div>
+                    <div class="side-section">
+                        <div class="side-title">VÍDEOS SUGERIDOS</div>
+                        <ul class="links">
+                            <li>LINKS</li>
+                            <li>LINKS</li>
+                            <li>LINKS</li>
+                            <li>LINKS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </div>
     </main>
+
     <button class="toggle-mode" onclick="toggleDarkMode()">Modo Escuro</button>
     <script src="../script.js"></script>
     <script src="/Ensino_1/Ensi1.js"></script>

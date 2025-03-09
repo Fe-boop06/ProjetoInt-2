@@ -13,21 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return pages.findIndex(page => page.includes(currentPage)); // Retorna o índice da página atual
     }
 
-    // Função para navegar para a próxima página
-    function goToNextPage() {
-        const currentIndex = getCurrentPageIndex();
-        if (currentIndex < pages.length - 1) { // Verifica se não está na última página
-            window.location.href = pages[currentIndex + 1]; // Redireciona para a próxima página
-        }
-    }
-
-    // Função para navegar para a página anterior
-    function goToPreviousPage() {
-        const currentIndex = getCurrentPageIndex();
-        if (currentIndex > 0) { // Verifica se não está na primeira página
-            window.location.href = pages[currentIndex - 1]; // Redireciona para a página anterior
-        }
-    }
 
     // Função para marcar o ícone ativo
     function loadActiveIcon() {
@@ -51,20 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem('activeIcon', activeIconHref);
         }
     }
-
-    // Captura o evento de teclado
-    document.addEventListener("keydown", function (event) {
-        switch (event.key) {
-            case "ArrowRight": // Tecla de seta para a direita
-                goToNextPage();
-                break;
-            case "ArrowLeft": // Tecla de seta para a esquerda
-                goToPreviousPage();
-                break;
-        }
-    });
-
-    // Carrega o ícone ativo ao iniciar a página
     loadActiveIcon();
 });
 
